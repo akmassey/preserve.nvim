@@ -12,6 +12,8 @@ function M.setup(opts)
 	--    end
 	-- end)
 	vim.keymap.set("n", "Q", '<cmd>lua require("preserve").preserve("normal gqap")<cr>', opts)
+	vim.keymap.set("n", "<Leader>a", '<cmd>lua require("preserve").preserve("%!fmt -s 78")<cr>', opts)
+	vim.keymap.set("v", "<Leader>a", '<cmd>lua require("preserve").preserve("\'<,\'>!fmt -s 78")<cr>', opts)
 end
 
 M.preserve = function(arguments)
